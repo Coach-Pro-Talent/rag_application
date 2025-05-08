@@ -1,0 +1,6 @@
+token.json
+faiss_index.faiss
+doc_mapping_id_to_text.json
+file_metadata.json
+config/**
+tmp/**
