@@ -27,7 +27,7 @@ token = st.secrets["token"]
 
 TOKEN_FILE_PATH="rag_own_data_source/google_drive/token.json"
 with open(TOKEN_FILE_PATH, "w") as f:
-    json.dump(token, f)
+    json.dump(dict(token), f)
 
 # Authentification
 def authenticate():
