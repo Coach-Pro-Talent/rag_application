@@ -39,7 +39,7 @@ llm = ChatOpenAI(
     model="gpt-4o",
     temperature=0,
     openai_api_key=api_key,
-    max_tokens=200
+    max_tokens=100
 )
 
 def speak(text):
