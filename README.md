@@ -10,7 +10,7 @@ Ce projet résout un problème courant : accéder rapidement à des informations
 
 - Télécharge vos fichiers depuis Google Drive
 - Extrait et découpe leur contenu
-- Vectorise les textes avec des embeddings OpenAI
+- Vectorise les textes avec des embeddings HuggingFace
 - Indexe le tout dans **FAISS**
 - Permet d'interroger cette base via une **interface Streamlit**
 - Génère des réponses contextuelles grâce à **GPT-4o**
