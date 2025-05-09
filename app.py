@@ -5,13 +5,17 @@ from utils import rag_answer
 import streamlit as st
 import pyttsx3
 from rag_own_data_source.google_drive.rag_faiss_drive import start_index_documents
+from elevenlabs.client import ElevenLabs
+from elevenlabs import play
+import os
 
 
 load_dotenv()
 api_key_env = os.environ.get("OPENAI_API_KEY")
-
+elevenlabs_api_key = os.environ.get("ELEVENLABS_API_KEY")
 st.set_page_config(page_title="Coach Pro Talent", layout="centered")
 
+client = ElevenLabs(api_key=elevenlabs_api_key)
 
 with st.sidebar:
     st.header("🔧 Configuration")
@@ -39,13 +43,16 @@ llm = ChatOpenAI(
 )
 
 def speak(text):
-    engine = pyttsx3.init()
-    engine.setProperty('volume', 1.0)
-    engine.setProperty('rate', 125)
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
-    engine.say(text)
-    engine.runAndWait()
+
+    audio = client.text_to_speech.convert(
+        text=text,
+        voice_id="JBFqnCBsd6RMkjVDRZzb",
+        model_id="eleven_multilingual_v2",
+        output_format="mp3_44100_128",
+    )
+    play(audio)
+
+
 
 
 tab_selection = st.radio("Sélectionnez une section", ["Chat", "À propos de moi", "Update Data"])
