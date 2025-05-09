@@ -1,4 +1,5 @@
 import io
+import json
 import os
 import re
 import numpy as np
@@ -10,7 +11,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-
+import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from .utils_function import load_json, save_json, embeddings
 
@@ -22,7 +23,11 @@ TMP_DIR = "rag_own_data_source/google_drive/tmp"
 EMBED_DIM = 384
 
 os.makedirs(TMP_DIR, exist_ok=True)
+token = st.secrets["token"]
 
+TOKEN_FILE_PATH="rag_own_data_source/google_drive/token.json"
+with open(TOKEN_FILE_PATH, "w") as f:
+    json.dump(token, f)
 
 # Authentification
 def authenticate():
@@ -108,7 +113,7 @@ def extract_text(path):
         print(f"Erreur extraction : {e}")
     return ""
 
-# Indexation principale
+
 def start_index_documents():
     logs = []
     creds = authenticate()
