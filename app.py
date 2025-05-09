@@ -7,7 +7,7 @@ import pyttsx3
 from rag_own_data_source.google_drive.rag_faiss_drive import start_index_documents
 from elevenlabs.client import ElevenLabs
 from elevenlabs import play
-import os
+import io
 
 
 load_dotenv()
@@ -50,7 +50,11 @@ def speak(text):
         model_id="eleven_multilingual_v2",
         output_format="mp3_44100_128",
     )
-    st.audio(audio, format="audio/mp3")
+    if isinstance(audio, bytes):
+        audio_data = io.BytesIO(audio)
+        st.audio(audio_data, format="audio/mp3")
+    else:
+        st.error("Erreur lors de la génération de l'audio.")
 
 
 
