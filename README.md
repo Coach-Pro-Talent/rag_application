@@ -1,4 +1,4 @@
-# 🚀 Coach Pro Talent - RAG intelligent avec Google Drive, FAISS & OpenAI
+az# 🚀 Coach Pro Talent - RAG intelligent avec Google Drive, FAISS & OpenAI
 
 > Un assistant intelligent qui lit et comprend vos documents (PDF, DOCX, Google Docs) stockés sur **Google Drive**, pour répondre à vos questions avec **OpenAI**. Un vrai copilote personnel pour exploiter votre propre savoir.
 
@@ -8,13 +8,12 @@
 
 Ce projet résout un problème courant : accéder rapidement à des informations pertinentes contenues dans vos documents éparpillés. Grâce à un pipeline RAG (Retrieval-Augmented Generation), ce système :
 
-- Télécharge vos fichiers depuis Google Drive
-- Extrait et découpe leur contenu
-- Vectorise les textes avec des embeddings HuggingFace
-- Indexe le tout dans **FAISS**
-- Permet d'interroger cette base via une **interface Streamlit**
-- Génère des réponses contextuelles grâce à **GPT-4o**
-
+- 📥 Télécharge vos fichiers depuis Google Drive
+- ✂️ Extrait et découpe leur contenu
+- 🧠 Vectorise les textes avec des embeddings HuggingFace
+- 📊 Indexe le tout dans **FAISS**
+- 💻 Permet d'interroger cette base via une **interface Streamlit**
+- 💬 Génère des réponses contextuelles grâce à **GPT-4o**
 ---
 
 ## 🔍 Fonctionnalités
