@@ -1,4 +1,4 @@
-az# 🚀 Coach Pro Talent - RAG intelligent avec Google Drive, FAISS & OpenAI
+# 🚀 Coach Pro Talent - RAG intelligent avec Google Drive, FAISS & OpenAI
 
 > Un assistant intelligent qui lit et comprend vos documents (PDF, DOCX, Google Docs) stockés sur **Google Drive**, pour répondre à vos questions avec **OpenAI**. Un vrai copilote personnel pour exploiter votre propre savoir.
 
